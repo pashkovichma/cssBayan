@@ -1,0 +1,134 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1em;
+    background-color: lightgrey;
+    font-size: 1em;
+    color: white;
+}
+
+header {
+    max-width: 50%;
+    margin: 2vh auto;
+    color: grey;
+}
+
+.container {
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mem-item {
+    background-color: grey;
+    margin: 0.1em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.mem-item__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.mem-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.6s;
+}
+
+.mem-button {
+    width: 0;
+    height: 0;
+    transition: all 0.6s;
+}
+
+.item-image {
+    display: flex;
+    justify-content: center;
+    align-item: center;
+    cursor: pointer;
+}
+
+.mem-image {
+    width: 0;
+    height: 0;
+    transition: all 0.6s;
+}
+
+.mem-item__input:checked~label .mem-image,
+.mem-item:hover .mem-image {
+    width: 50%;
+    height: 50%;
+    padding: 1em 0;
+}
+
+.container:hover .mem-button {
+    width: 1em;
+    height: 1em;
+    transition: all 0.6s;
+    background: url('../assets/cross.svg') center/cover no-repeat;
+}
+
+.mem-item:hover .mem-button,
+.mem-item__input:checked~label .mem-button {
+    transform: rotate(45deg);
+}
+
+.mem-item__input:checked~label .mem-title {
+    color: black;
+}
+
+.container:hover .mem-title {
+    color: black;
+}
+
+@media (max-width: 900px) {
+    header,
+    .container {
+        max-width: 70%;
+    }
+
+    .mem-item__input:checked~label .mem-image,
+    .mem-item:hover .mem-image {
+        width: 70%;
+        height: 70%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .mem-item {
+        padding: 0 1em;
+    }
+
+    .mem-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    header,
+    .container {
+        max-width: 90%;
+    }
+
+    .mem-item__input:checked~label .mem-image,
+    .mem-item:hover .mem-image {
+        width: 90%;
+        height: 90%;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+    .mem-title {
+        font-size: 0.8rem;
+    }
+}
